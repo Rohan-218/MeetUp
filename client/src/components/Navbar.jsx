@@ -14,6 +14,7 @@ const Navbar = () => {
     <header className="w-full max-w-305 mx-auto bg-white/90 backdrop-blur xl:rounded-b-xl sticky top-0 z-40 px-6 py-4 flex items-center justify-between border border-slate-200">
       {/* Logo & Navigation Links */}
       <div className="flex items-center gap-6">
+
         <Link to='/dashboard' className="flex items-center gap-1.5">
           <img src="/logo.svg" alt="MeetUp Logo" className="size-6.5" />
           <span className="text-2xl font-medium tracking-tight text-slate-900 flex items-center">
@@ -63,7 +64,7 @@ const Navbar = () => {
       {/* Right Profile / UserButton */}
       {isSignedIn && (
         <div className="flex items-center gap-4">
-          <Link to='/sessions' className="bg-red-400 md:hidden text-xs font-medium text-slate-600 hover:text-primary flex items-center gap-1">
+          <Link to='/sessions' className="md:hidden text-xs font-medium text-slate-600 hover:text-primary flex items-center gap-1">
             <HistoryIcon className="w-4 h-4" />
             Sessions
           </Link>
@@ -75,9 +76,7 @@ const Navbar = () => {
           <UserButton afterSignoutUrl='/login'/>
 
         </div>
-      )
-      
-      }
+      )}
       
     </header>
   )
