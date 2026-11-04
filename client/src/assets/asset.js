@@ -2,12 +2,12 @@
 
 export const dummyUser = {
     id: "user_mock_001",
-    fullName: "Alex Rivera",
-    firstName: "Alex",
-    lastName: "Rivera",
-    name: "Alex Rivera",
+    fullName: "Rohan Tomar",
+    firstName: "Rohan",
+    lastName: "Tomar",
+    name: "Rohan Tomar",
     primaryEmailAddress: {
-        emailAddress: "alex.rivera@example.com",
+        emailAddress: "rohan.tomar@example.com",
     },
     imageUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
 };
@@ -31,13 +31,13 @@ export const dummySessions = [
         endedAt: "2026-08-14T10:45:00.000Z",
         host: {
             id: "user_mock_001",
-            name: "Alex Rivera",
-            email: "alex.rivera@example.com",
+            name: "Rohan Tomar",
+            email: "rohan.tomar@example.com",
         },
         participants: [
             {
-                user: { id: "user_mock_001", email: "alex.rivera@example.com" },
-                name: "Alex Rivera",
+                user: { id: "user_mock_001", email: "rohan.tomar@example.com" },
+                name: "Rohan Tomar",
                 joinedAt: "2026-08-14T09:30:00.000Z",
                 leftAt: "2026-08-14T10:45:00.000Z",
             },
@@ -64,7 +64,7 @@ export const dummySessions = [
             {
                 id: "m1",
                 senderId: "user_mock_001",
-                senderName: "Alex Rivera",
+                senderName: "Rohan Tomar",
                 text: "Welcome everyone! Let's kick off with the Q3 milestone updates.",
                 timestamp: "2026-08-14T09:31:00.000Z",
             },
@@ -85,7 +85,7 @@ export const dummySessions = [
             {
                 id: "m4",
                 senderId: "user_mock_001",
-                senderName: "Alex Rivera",
+                senderName: "Rohan Tomar",
                 text: "Awesome work team. Let's aim for shipping next Wednesday!",
                 timestamp: "2026-08-14T09:42:00.000Z",
             },
@@ -111,8 +111,8 @@ export const dummySessions = [
                 leftAt: null,
             },
             {
-                user: { id: "user_mock_001", email: "alex.rivera@example.com" },
-                name: "Alex Rivera",
+                user: { id: "user_mock_001", email: "rohan.tomar@example.com" },
+                name: "Rohan Tomar",
                 joinedAt: "2026-08-14T14:16:30.000Z",
                 leftAt: null,
             },
@@ -134,7 +134,7 @@ export const dummySessions = [
             {
                 id: "m11",
                 senderId: "user_mock_001",
-                senderName: "Alex Rivera",
+                senderName: "Rohan Tomar",
                 text: "The new sidebar drawer looks super clean!",
                 timestamp: "2026-08-14T14:19:40.000Z",
             },
@@ -149,13 +149,13 @@ export const dummySessions = [
         endedAt: "2026-08-13T10:30:00.000Z",
         host: {
             id: "user_mock_001",
-            name: "Alex Rivera",
-            email: "alex.rivera@example.com",
+            name: "Rohan Tomar",
+            email: "rohan.tomar@example.com",
         },
         participants: [
             {
-                user: { id: "user_mock_001", email: "alex.rivera@example.com" },
-                name: "Alex Rivera",
+                user: { id: "user_mock_001", email: "rohan.tomar@example.com" },
+                name: "Rohan Tomar",
                 joinedAt: "2026-08-13T10:00:00.000Z",
                 leftAt: "2026-08-13T10:30:00.000Z",
             },
@@ -186,8 +186,8 @@ export const dummyMeetingDetails = {
     createdAt: new Date().toISOString(),
     host: {
         id: "user_mock_001",
-        name: "Alex Rivera",
-        email: "alex.rivera@example.com",
+        name: "Rohan Tomar",
+        email: "rohan.tomar@example.com",
     },
 };
 
@@ -223,7 +223,7 @@ export const dummyInitialChatMessages = [
         id: "chat_01",
         senderId: "user_mock_002",
         senderName: "Sarah Chen",
-        text: "Hey Alex! Can you hear me clearly?",
+        text: "Hey Rohan! Can you hear me clearly?",
         time: "02:15 PM",
     },
     {
