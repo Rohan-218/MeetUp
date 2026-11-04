@@ -9,7 +9,7 @@ export const dummyUser = {
     primaryEmailAddress: {
         emailAddress: "rohan.tomar@example.com",
     },
-    imageUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+    imageUrl: "https://res.cloudinary.com/kikozips/image/upload/v1793356510/cobvzsis6vrkdgjkrydy.png",
 };
 
 export const dummyStats = {

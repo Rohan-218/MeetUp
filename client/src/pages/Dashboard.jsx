@@ -2,6 +2,7 @@ import { ArrowRightIcon, KeyboardIcon, PlusIcon, ShieldCheckIcon } from "lucide-
 import React, { useEffect, useState } from "react";
 import { dummyStats, dummyUser } from "../assets/asset";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 const Dashboard = () => {
 
@@ -20,9 +21,29 @@ const Dashboard = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const handleCreateMeeting = () => {};
+  const handleCreateMeeting = () => {
+    setIsCreating(true);
+    const chars ="abcdefghijklmnopqrstuvwxyz";
+    const seg = () => Array.from({length: 3}, () => chars[Math.floor(Math.random() * chars.length)]).join("");
+    const newMeetingId = `${seg()}-${seg()}-${seg()}`;
 
-  const handleJoinMeeting = (e) => {};
+    setTimeout(() => {
+      setIsCreating(false);
+      toast.success("Meeting Created!");
+      navigate(`/meeting/${newMeetingId}`)
+    }, 400);
+  };
+
+  const handleJoinMeeting = (e) => {
+    e.preventDefault();
+    const cleanId = joinId.trim().toLowerCase();
+    if (!/^[a-z]{3}-[a-z]{3}-[a-z]{3}$/.test(cleanId)) {
+      toast.error("Enter a valid code like abc-def-ghi");
+      return;
+   }
+
+    navigate(`/meeting/${cleanId}`)
+  };
 
   return (
     <div className="flex-1 max-w-7xl w-full mx-auto p-6 md:p-12 flex flex-col justify-center">
@@ -50,6 +71,7 @@ const Dashboard = () => {
                 className="bg-primary hover:bg-primary-hover text-white font-medium 
                 px-6 py-3.5 rounded-full shadow-md shadow-primary/20 flex items-center justify-center
                 gap-2.5 transition-all cursor-pointer disabled:opacity-50"
+                onClick={handleCreateMeeting} disabled={isCreating}
               >
                 <PlusIcon className="w-5 h-5" />
                 <span>{isCreating ? "Creating..." : "New Meeting"}</span>
