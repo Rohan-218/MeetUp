@@ -40,9 +40,9 @@ const Dashboard = () => {
     if (!/^[a-z]{3}-[a-z]{3}-[a-z]{3}$/.test(cleanId)) {
       toast.error("Enter a valid code like abc-def-ghi");
       return;
-   }
+    }
 
-    navigate(`/meeting/${cleanId}`)
+    navigate(`/meeting/${encodeURIComponent(cleanId)}`);
   };
 
   return (

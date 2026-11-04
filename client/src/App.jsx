@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Toaster } from 'react-hot-toast';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
@@ -34,7 +34,7 @@ const App = () => {
         <Route path='*' element={<Navigate to="/dashboard" replace />} />
       </Routes>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

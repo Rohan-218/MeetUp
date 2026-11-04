@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -10,7 +10,7 @@ const ProtectedLayout = () => {
       <Outlet />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default ProtectedLayout
+export default ProtectedLayout;

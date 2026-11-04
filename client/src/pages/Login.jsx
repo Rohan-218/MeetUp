@@ -1,5 +1,5 @@
 import { SignIn, SignUp, useUser } from '@clerk/react';
-import React from 'react'
+import React from 'react';
 import { Navigate } from 'react-router-dom';
 
 const Login = ({mode = "login"}) => {
@@ -23,7 +23,7 @@ const Login = ({mode = "login"}) => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
