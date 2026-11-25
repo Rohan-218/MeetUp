@@ -1,7 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { dummyRemoteParticipants } from '../assets/asset';
+import toast from 'react-hot-toast';
 
-const useWebRTC = (_roomId, user, onMeeetingEnded, _enabled = true) => {
+const useWebRTC = (_roomId, user, onMeetingEnded, _enabled = true) => {
 
 	const [localStream, setLocalStream] = useState(null);
 	const [remoteUsers, setRemoteUsers] = useState(dummyRemoteParticipants);
@@ -38,9 +39,48 @@ const useWebRTC = (_roomId, user, onMeeetingEnded, _enabled = true) => {
 		};
 	},[initLocalStream]);
 
-  return (
-    <div>useWebRTC</div>
-  );
+	// Toggle local Mic
+	const toggleAudio = () => {
+		const newState = !audioEnabled;
+		setAudioEnabled(newState);
+		if (localStreamRef.current){
+			const audioTrack = localStreamRef.current.getAudioTracks()[0];
+			if(audioTrack) audioTrack.enabled = newState;
+		}
+		toast(newState ? "Microphone turned on" : "Microphone muted", {
+			icon: newState ? "🎙️" : "🔇",
+		})
+	};
+
+	// Toggle local Camera
+	const toggleVideo = () => {
+		const newState = !videoEnabled;
+		setVideoEnabled(newState);
+		if (localStreamRef.current){
+			const videoTrack = localStreamRef.current.getVideoTracks()[0];
+			if(videoTrack) videoTrack.enabled = newState;
+		}
+		toast(newState ? "Camera turned on" : "Camera turned off", {
+			icon: newState ? "📹" : "📷",
+		})
+	};
+
+	//  End meeting for everyone
+	const endMeeting = useCallback(() => {
+		if (onMeetingEnded) {
+			onMeetingEnded("Meeting ended");
+		}
+	},[onMeetingEnded]);
+	
+  	return {
+		localStream,
+		remoteUsers,
+		audioEnabled,
+		videoEnabled,
+		toggleAudio,
+		toggleVideo,
+		endMeeting
+	};
 };
 
 export default useWebRTC;
