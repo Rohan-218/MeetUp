@@ -1,8 +1,8 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { MicOffIcon, UserIcon, VideoOffIcon } from "lucide-react";
 
 const VideoTitle = ({stream, name, isLocal = false, audioEnabled = true, videoEnabled = true}) => {
-  
+
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const VideoTitle = ({stream, name, isLocal = false, audioEnabled = true, videoEn
               flex items-center justify-center text-indigo-300 text-2xl font-bold uppercase 
               shadow-inner"
           >
-            {name ? name.CharAt(0) : <UserIcon className="w-8 h-8" />}
+            {name ? name.charAt(0) : <UserIcon className="w-8 h-8" />}
           </div>
 
           <span

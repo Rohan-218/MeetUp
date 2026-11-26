@@ -3,7 +3,7 @@ import VideoTitle from './VideoTitle';
 
 const VideoGrid = ({localStream, localUser, remoteUsers, audioEnabled, videoEnabled}) => {
   
-	const totalParticipant = 1 + remoteUsers.length;
+	const totalParticipants = 1 + remoteUsers.length;
 
 	//  Determine grid columns dynamically
 	const getGridClass = () => {
