@@ -44,6 +44,7 @@ const MeetingRoom = () => {
 
       {/* Main Content Area */}
       <div className="flex-1 flex overflow-hidden relative">
+
         {/* Video Grid Center */}
         <VideoGrid
           localStream={localStream}
@@ -52,11 +53,15 @@ const MeetingRoom = () => {
           audioEnabled={audioEnabled}
           videoEnabled={videoEnabled}
         />
+
         {/* In Meeting Chat Drawer */}
+          
         
         {/* Participant Drawer */}
+
         
         {/* Bottom Floating Control Bar */}
+
       </div>
       
     </div>
