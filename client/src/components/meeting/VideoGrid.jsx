@@ -1,4 +1,5 @@
 import React from 'react';
+import VideoTitle from './VideoTitle';
 
 const VideoGrid = ({localStream, localUser, remoteUsers, audioEnabled, videoEnabled}) => {
   
@@ -19,7 +20,25 @@ const VideoGrid = ({localStream, localUser, remoteUsers, audioEnabled, videoEnab
 				transition-all duration-300`}
 			>
 				{/* Local User Tile */}
+				<VideoTitle
+					stream={localStream}
+					name={localUser?.name || "You"}
+					isLocal={true}
+					audioEnabled={audioEnabled}
+					videoEnabled={videoEnabled}
+				/>
 
+				{/* Remote User Tiles */}
+				{remoteUsers.map((remote) => (
+					<VideoTitle
+						key={remote.socketId}
+						stream={remote.stream}
+						name={remote.userName}
+						isLocal={false}
+						audioEnabled={remote.audioEnabled}
+						videoEnabled={remote.videoEnabled}
+					/>
+				))}
 			</div>
 
 	</div>
