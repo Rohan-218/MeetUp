@@ -3,6 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { dummyMeetingDetails, dummyUser } from '../assets/asset';
 import VideoGrid from '../components/meeting/VideoGrid';
 import useWebRTC from "../hooks/useWebRTC";
+import useChat from "../hooks/useChat";
+import ChatPanel from '../components/meeting/ChatPanel';
 
 const MeetingRoom = () => {
 
@@ -18,7 +20,11 @@ const MeetingRoom = () => {
 
   // Initialize WebRTC
   const {localStream, remoteUsers, audioEnabled, videoEnabled, toggleAudio, toggleVideo, endMeeting}
-    = useWebRTC(meetingId, userData, handleMeetingEnded)
+    = useWebRTC(meetingId, userData, handleMeetingEnded);
+
+  // Initialize Chat
+  const {messages, sendMessage, unreadCount, isChatOpen, toggleChat} 
+    = useChat(meetingId, userData);
 
   const isHost = true;
 
@@ -55,7 +61,13 @@ const MeetingRoom = () => {
         />
 
         {/* In Meeting Chat Drawer */}
-          
+        <ChatPanel 
+          isOpen={isChatOpen}
+          onClose={toggleChat}
+          messages={messages}
+          onSendMessage={sendMessage}
+          currentUser={userData}
+        /> 
         
         {/* Participant Drawer */}
 

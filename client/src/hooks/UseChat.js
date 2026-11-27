@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { dummyInitialChatMessages } from "../assets/asset";
 
-export const useChat = (_roomId, user) => {
+const useChat = (_roomId, user) => {
     const [messages, setMessages] = useState(dummyInitialChatMessages);
     const [unreadCount, setUnreadCount] = useState(0);
-    const [isChatOpen, setIsChatOpen] = useState(false);
+    const [isChatOpen, setIsChatOpen] = useState(true);
 
     const sendMessage = useCallback(
         (text) => {
@@ -41,3 +41,5 @@ export const useChat = (_roomId, user) => {
         toggleChat
     };
 };
+
+export default useChat;

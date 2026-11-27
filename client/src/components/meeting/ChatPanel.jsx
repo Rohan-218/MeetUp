@@ -55,8 +55,8 @@ const ChatPanel = ({ isOpen, onClose, messages, onSendMessage, currentUser}) => 
             </p>
           </div>
         ) : (
-          messages.map(() => {
-            const isMe = MicSignal.senderId === currentUser?.id;
+          messages.map((msg, index) => {
+            const isMe = msg.senderId === currentUser?.id;
             return (
               <div
                 key={msg.id || index}
