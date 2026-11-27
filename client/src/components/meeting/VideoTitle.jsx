@@ -13,7 +13,7 @@ const VideoTitle = ({stream, name, isLocal = false, audioEnabled = true, videoEn
 
   return (
     <div
-      className="relative w-full h-full min-h-50 bg-slate-900 rounded-2x1
+      className="relative w-full h-full min-h-50 bg-slate-900 rounded-2xl
         overflow-hidden border border-slate-800 shadow-md flex items-center justify-center
         group"
     >
