@@ -11,30 +11,30 @@ import Pricing from './pages/Pricing';
 import MeetingRoom from './pages/MeetingRoom';
 
 const App = () => {
-  return (
-    <>
-      <Toaster />
-      <Routes>
-        {/* Public Routes */}
-        <Route path='/login' element={<Login mode="login"/>} />
-        <Route path='/register' element={<Login mode="register"/>} />
+    return (
+        <>
+            <Toaster />
+            <Routes>
+                {/* Public Routes */}
+                <Route path='/login' element={<Login mode="login"/>} />
+                <Route path='/register' element={<Login mode="register"/>} />
 
-        {/* Private Routes */}
-        <Route element={<ProtectedRoutes />}>
-          <Route element={<ProtectedLayout />}>
-            <Route path='/dashboard' element={<Dashboard />} />
-            <Route path='/sessions' element={<Sessions />} />
-            <Route path='/pricing' element={<Pricing />} />
-          </Route>
-          <Route path='/meeting/:meetingId' element={<MeetingRoom />} />
-        </Route>
+                {/* Private Routes */}
+                <Route element={<ProtectedRoutes />}>
+                    <Route element={<ProtectedLayout />}>
+                        <Route path='/dashboard' element={<Dashboard />} />
+                        <Route path='/sessions' element={<Sessions />} />
+                        <Route path='/pricing' element={<Pricing />} />
+                    </Route>
+                    <Route path='/meeting/:meetingId' element={<MeetingRoom />} />
+                </Route>
 
 
-        {/* Other Routes */}
-        <Route path='*' element={<Navigate to="/dashboard" replace />} />
-      </Routes>
-    </>
-  );
+                {/* Other Routes */}
+                <Route path='*' element={<Navigate to="/dashboard" replace />} />
+            </Routes>
+        </>
+    );
 };
 
 export default App;

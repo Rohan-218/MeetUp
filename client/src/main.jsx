@@ -7,15 +7,15 @@ import { ClerkProvider } from '@clerk/react'
 const publishableKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
 if(!publishableKey) {
-  throw new Error("Missing VITE_CLERK_PUBLISHABLE_KEY. Please add it to your .env file.");
+    throw new Error("Missing VITE_CLERK_PUBLISHABLE_KEY. Please add it to your .env file.");
 }
 
 createRoot(document.getElementById('root')).render(
-  <ClerkProvider publishableKey={publishableKey} afterSignOutUrl="/login">
-    <BrowserRouter>
+    <ClerkProvider publishableKey={publishableKey} afterSignOutUrl="/login">
+        <BrowserRouter>
 
-        <App />
+            <App />
 
-    </BrowserRouter>
-  </ClerkProvider>
+        </BrowserRouter>
+    </ClerkProvider>
 )
