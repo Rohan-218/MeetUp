@@ -1,4 +1,4 @@
-import { CrownIcon, MicIcon, MicOffIcon, VideoIcon, VideoOffIcon } from 'lucide-react';
+import { XIcon, CrownIcon, MicIcon, MicOffIcon, VideoIcon, VideoOffIcon } from 'lucide-react';
 import React from 'react';
 
 const ParticipantList = ({isOpen, onClose, localUser, localAudio, localVideo, remoteUsers, meetingHostId}) => {
@@ -35,7 +35,7 @@ const ParticipantList = ({isOpen, onClose, localUser, localAudio, localVideo, re
             </div>
 
             {/* List */}
-            <div className="flex-1 p-4 overflow-y-autospace-y-3">
+            <div className="flex-1 p-4 overflow-y-auto space-y-3">
                 {allParticipants.map((p) => {
                     const isHost = meetingHostId && p.userId === meetingHostId;
 

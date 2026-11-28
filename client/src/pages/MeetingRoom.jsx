@@ -5,6 +5,7 @@ import VideoGrid from '../components/meeting/VideoGrid';
 import useWebRTC from "../hooks/useWebRTC";
 import useChat from "../hooks/useChat";
 import ChatPanel from '../components/meeting/ChatPanel';
+import ParticipantList from '../components/meeting/ParticipantList';
 
 const MeetingRoom = () => {
 
@@ -12,7 +13,7 @@ const MeetingRoom = () => {
     const navigate = useNavigate();
     const userData = dummyUser;
     
-    const [isParticipantsOpen, setIsParticipantsOpen] = useState(false);
+    const [isParticipantsOpen, setIsParticipantsOpen] = useState(true);
 
     const handleMeetingEnded = useCallback(() => {
         navigate('/dashboard')
@@ -73,7 +74,15 @@ const MeetingRoom = () => {
                 /> 
                 
                 {/* Participant Drawer */}
-
+                <ParticipantList
+                    isOpen={isParticipantsOpen}
+                    onClose={() => setIsParticipantsOpen(false)}
+                    localUser={userData}
+                    localAudio={audioEnabled}
+                    localVideo={videoEnabled}
+                    remoteUsers={remoteUsers}
+                    meetingHostId={dummyUser.id}
+                />
                 
                 {/* Bottom Floating Control Bar */}
 
